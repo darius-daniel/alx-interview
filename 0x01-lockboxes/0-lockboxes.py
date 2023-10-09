@@ -8,7 +8,7 @@ def canUnlockAll(boxes: list) -> bool:
     :param boxes: list of lists of numbers
     :return: if all lockboxes can be opened, true. Else, false
     """
-    if len(boxes) == 0:
+    if not boxes:
         return False
     elif len(boxes) == 1:
         return True
