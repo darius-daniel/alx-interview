@@ -8,18 +8,18 @@ def canUnlockAll(boxes: list) -> bool:
     :param boxes: list of lists of numbers
     :return: if all lockboxes can be opened, true. Else, false
     """
-    available_keys: list = []
+    if len(boxes) == 0:
+        return False
+    elif len(boxes) == 1:
+        return True
 
+    available_keys: list = []
     for index, box in enumerate(boxes):
         for key in box:
             if key not in available_keys:
                 available_keys.append(key)
 
-        # print('{} -> {}'.format(index, available_keys))
-
-        if index > 1 and index not in available_keys:
+        if index >= 1 and index not in available_keys:
             return False
-        else:
-            continue
 
     return True
