@@ -3,10 +3,11 @@
 from sys import stdin
 from typing import Dict, Sequence
 
+
 possible_stat_codes: Sequence[int] = (200, 301, 400, 401, 403, 404, 405, 500)
 stat_codes_count: Dict[int, int] = {k: 0 for k in possible_stat_codes}
 
-total_size = 0
+total_size: int = 0
 
 
 def show_log(index: int, line: str, total_size: int) -> None:
@@ -24,7 +25,7 @@ def show_log(index: int, line: str, total_size: int) -> None:
     if stat_code in possible_stat_codes and isinstance(stat_code, int):
         stat_codes_count[stat_code] += 1
 
-    if (index + 1) % 10 == 0:
+    if (index + 1) % 10 == 0 or line == '^C':
         print(f'File Size: {total_size}')
         for code in possible_stat_codes:
             if stat_codes_count[code] > 0:
@@ -35,4 +36,4 @@ try:
     for index, line in enumerate(stdin):
         show_log(index, line, total_size)
 except KeyboardInterrupt:
-    show_log(index, line, total_size)
+    pass
