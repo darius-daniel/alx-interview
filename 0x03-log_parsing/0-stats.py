@@ -4,9 +4,9 @@ from sys import stdin
 from typing import Dict, Sequence
 
 
-possible_stat_codes: Sequence[int] = (200, 301, 400, 401, 403, 404, 405, 500)
-stat_codes_count: Dict[int, int] = {k: 0 for k in possible_stat_codes}
-total: Dict[str, int] = {'size': 0}
+possible_stat_codes = (200, 301, 400, 401, 403, 404, 405, 500)
+stat_codes_count = {k: 0 for k in possible_stat_codes}
+total = {'size': 0}
 
 
 def print_stats(total_size: int) -> None:
