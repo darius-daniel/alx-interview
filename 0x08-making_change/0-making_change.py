@@ -11,7 +11,7 @@ def makeChange(coins: List, total: int) -> int:
     if total <= 0:
         return 0
 
-    coins.sort(reverse=true)
+    coins.sort(reverse=True)
     counter = 0
 
     while total > 0:
