@@ -23,6 +23,5 @@ def makeChange(coins: List, total: int) -> int:
         if idx == len(coins) - 1 and total > 0:
             return -1
         counter += 1
-        
+
     return counter
-            
