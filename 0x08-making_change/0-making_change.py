@@ -8,8 +8,10 @@ def makeChange(coins: List, total: int) -> int:
     """ Determines the fewest number of coins needed to meet a given amount
     total.
     """
-    coins.sort()
-    coins.reverse()
+    if total <= 0:
+        return 0
+
+    coins.sort(reverse=true)
     counter = 0
 
     while total > 0:
