@@ -5,8 +5,7 @@
 def island_perimeter(grid: list) -> int:
     """Return the perimeter of the grid."""
     perimeter = 0
-    if len(grid) > 0 and [] not in grid:
-
+    if 0 < len(grid) <= 100 and [] not in grid:
         for r_idx, row in enumerate(grid):
             for c_idx, col in enumerate(row):
                 if col == 1:
